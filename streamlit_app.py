@@ -4,5 +4,4 @@ import openai
 
 col1, col2, col3 = st.columns(3)
 with col2:
-    st.header("CookSmart", width=1000)
-    st.write("Cook Smarter Not Harder ")
+    st.markdown("<h1>CookSmart</h1><br><h2>Cook smarter not harder></h2>")
