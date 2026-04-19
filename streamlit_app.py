@@ -72,7 +72,7 @@ with st.form("get-recipes"):
         response = client.chat.completions.create(
             model="gpt-4o",
             response_format= {'type':'json_object'},
-            messages=st.session_state['chat_history'],
+            messages=st.session_state['chat'],
         
             )
         st.write(json.loads(response.choices[0].message.content))
