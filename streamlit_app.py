@@ -44,7 +44,7 @@ Rules:
 
 
 if 'chat' not in st.session_state:
-    st.session_state["chat"] = {'role':'system','content':system_prompt}
+    st.session_state["chat"] = [{'role':'system','content':system_prompt}]
 
 with st.form('hp_form'):
     ingredients = st.text_input("What are the ingredients you have?(Write commas between each induvidual ingredient, atleast 4 ingredients) ")
