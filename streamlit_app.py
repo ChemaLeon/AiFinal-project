@@ -58,8 +58,8 @@ What can I cook?
 
     if submit_button:
         st.write('ingredients taken')
-
-        st.session_state['chat'].append({'role':'user','content':user_prompt})
+        if 'chat' in st.session_state:
+            st.session_state['chat'].append({'role':'user','content':user_prompt})
         if 'ingredients' in st.session_state:
             st.session_state['ingredients'].append(ingredients)
 
