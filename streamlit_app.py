@@ -1,6 +1,5 @@
 import streamlit as st
+import openai
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+st.title("CookSmart")
+st.write("Cook Smarter, not Harder. Recipes straight from what you have")
