@@ -75,4 +75,17 @@ with st.form("get-recipes"):
             messages=st.session_state['chat'],
         
             )
-        st.write(json.loads(response.choices[0].message.content))
+        data = json.loads(response.choices[0].message.content)  # your JSON string
+
+        for recipe in data["recipes"]:
+            st.subheader(recipe["title"])
+            
+            "**Ingredients:**"
+            for ing in recipe["ingredients"]:
+                st.write(f"- {ing}")
+            
+            st.write("**Steps:**")
+            for i, step in enumerate(recipe["steps"], 1):
+                st.write(f"{i}. {step}")
+            
+            st.write("---")
