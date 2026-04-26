@@ -2,6 +2,10 @@ import streamlit as st
 from openai import OpenAI
 import json
 
+st.set_page_config(
+    page_title="CookSmart",
+    page_icon="🍳")
+
 if 'ingredients' not in st.session_state:
     st.session_state["ingredients"] = []
 
