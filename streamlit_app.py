@@ -34,7 +34,7 @@ Return ONLY valid JSON in this format:
 }
 
 Rules:
-- Use only given ingredients + basic pantry items
+- Use only given ingredients + basic pantry items such as salt, pepper, water, oil
 - Dont use other ingredients, only the ones the person gave.
 - Must be valid recipes, not some made up ones. Google them off the internet
 - Generate exactly 5 recipes
