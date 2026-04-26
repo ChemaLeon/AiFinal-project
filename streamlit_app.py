@@ -45,7 +45,7 @@ Rules:
 - Max 10 steps per recipe
 - BE VERY VERY DETAILED, BE SURE TO ADD COOKING TIMES, HOW HOT TO COOK AND VERY SPECIFIC THINGS THAT ARE EASY TO FOLLOW.
 - add some emojis just for fun
-- add additional information such as calories(you can add calories for each ingredient), difficulty(use stars for the difficulty ⭐⭐⭐, 3 out of 5 stars), time(include the overall cook time)
+- be sure add additional information in the title such as calories(you can add calories for each ingredient), difficulty(use stars for the difficulty ⭐⭐⭐, 3 out of 5 stars), time(include the overall cook time)
 """
 
 
