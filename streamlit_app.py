@@ -44,6 +44,7 @@ Rules:
 - Generate exactly 5 recipes
 - Max 10 steps per recipe
 - BE VERY VERY DETAILED, BE SURE TO ADD COOKING TIMES, HOW HOT TO COOK AND VERY SPECIFIC THINGS THAT ARE EASY TO FOLLOW.
+- add some emojis just for fun
 """
 
 
