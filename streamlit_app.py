@@ -39,6 +39,7 @@ Rules:
 - Must be valid recipes, not some made up ones. Google them off the internet
 - Generate exactly 5 recipes
 - Max 10 steps per recipe
+- BE VERY VERY DETAILED, BE SURE TO ADD COOKING TIMES, HOW HOT TO COOK AND VERY SPECIFIC THINGS THAT ARE EASY TO FOLLOW.
 """
 
 
@@ -48,11 +49,13 @@ if 'chat' not in st.session_state:
 
 with st.form('hp_form'):
     ingredients = st.text_input("What are the ingredients you have?(Write commas between each induvidual ingredient, atleast 4 ingredients) ")
+    cookware = st.text_input("What cookware do you have in your kitches? ")
     submit_button = st.form_submit_button("Submit ingredients")
     user_prompt = f"""
 These are the ingredients I have:
 {ingredients}
-
+These are the cookware I have:
+{cookware}
 What can I cook?
 """
 
