@@ -1,6 +1,7 @@
 import streamlit as st
 from openai import OpenAI
 import json
+import pandas as pd
 
 st.set_page_config(
     page_title="CookSmart",
@@ -8,6 +9,14 @@ st.set_page_config(
 
 if 'ingredients' not in st.session_state:
     st.session_state["ingredients"] = []
+else:
+    data = pd.DataFrame(
+            {"Ingredient List": st.session_state['ingredients']}
+        )
+    st.table(data)
+            
+
+
 
 
 client = OpenAI(
@@ -54,8 +63,8 @@ if 'chat' not in st.session_state:
     st.session_state["chat"] = [{'role':'system','content':system_prompt}]
 
 with st.form('hp_form'):
-    ingredients = st.text_input("What are the ingredients you have?(Write commas between each induvidual ingredient, atleast 4 ingredients) ")
-    cookware = st.text_input("What cookware do you have in your kitches? ")
+    ingredients = st.text_input("What are the ingredients you have?(Write commas between each individual ingredient, atleast 4 ingredients) ")
+    cookware = st.text_input("What cookware do you have in your kitchen? ")
     otherinfo = st.text_input("Do you have any other information? ")
     submit_button = st.form_submit_button("Submit ingredients")
     user_prompt = f"""
@@ -80,7 +89,7 @@ with st.form("get-recipes"):
     st.write("Press to get recipe")
     get_recipe = st.form_submit_button('Get recipe list made with ingredients!')
     if get_recipe:
-    
+        
         response = client.chat.completions.create(
             model="gpt-4o",
             response_format= {'type':'json_object'},
@@ -88,7 +97,7 @@ with st.form("get-recipes"):
         
             )
         data = json.loads(response.choices[0].message.content)  # your JSON string
-
+        st.session_state['chat'].append({'role':'assistant','content':json.dumps(data)})
         for recipe in data["recipes"]:
             st.subheader(recipe["title"])
             
