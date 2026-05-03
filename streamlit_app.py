@@ -83,6 +83,7 @@ What can I cook?
             st.session_state['chat'].append({'role':'user','content':user_prompt})
         if 'ingredients' in st.session_state:
             st.session_state['ingredients'].append(ingredients)
+        st.rerun()
 
 
 with st.form("get-recipes"):
