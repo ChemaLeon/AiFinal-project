@@ -99,7 +99,7 @@ with st.form("get-recipes"):
             )
         data = json.loads(response.choices[0].message.content)  # your JSON string
         st.session_state['chat'].append({'role':'assistant','content':json.dumps(data)})
-        for recipe in data["recipes"]:
+        for recipe in sorted(data["recipes"],key=lambda item: itemp):
             st.subheader(recipe["title"])
             
             "**Ingredients:**"
